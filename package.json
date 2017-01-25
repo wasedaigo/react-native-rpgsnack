@@ -1,0 +1,12 @@
+{
+  "name": "react-native-rpgsnack",
+  "version": "0.0.1",
+  "description": "A react-native plugin for RPGSnack",
+  "author": "Daigo Sato <daigo.gamemaker@gmail.com>",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sbugert/react-native-rpgsnack.git"
+  }
+}

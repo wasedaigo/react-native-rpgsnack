@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72251E111E3941C9000603FA /* RNRuntimeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E101E3941C9000603FA /* RNRuntimeViewManager.m */; };
+		72251E581E3965EB000603FA /* RuntimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E571E3965EB000603FA /* RuntimeView.m */; };
+		72251E5B1E3967A5000603FA /* Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72251E5A1E3967A5000603FA /* Mobile.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		72251DA11E393C0F000603FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		72251DA31E393C0F000603FA /* libRNRPGSnack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNRPGSnack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72251E0F1E3941C9000603FA /* RNRuntimeViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNRuntimeViewManager.h; sourceTree = SOURCE_ROOT; };
+		72251E101E3941C9000603FA /* RNRuntimeViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRuntimeViewManager.m; sourceTree = SOURCE_ROOT; };
+		72251E561E3965EB000603FA /* RuntimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeView.h; sourceTree = SOURCE_ROOT; };
+		72251E571E3965EB000603FA /* RuntimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeView.m; sourceTree = SOURCE_ROOT; };
+		72251E5A1E3967A5000603FA /* Mobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mobile.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72251DA01E393C0F000603FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72251E5B1E3967A5000603FA /* Mobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72251D9A1E393C0F000603FA = {
+			isa = PBXGroup;
+			children = (
+				72251DA51E393C0F000603FA /* RNRPGSnack */,
+				72251DA41E393C0F000603FA /* Products */,
+				72251E591E3967A5000603FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		72251DA41E393C0F000603FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72251DA31E393C0F000603FA /* libRNRPGSnack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72251DA51E393C0F000603FA /* RNRPGSnack */ = {
+			isa = PBXGroup;
+			children = (
+				72251E0F1E3941C9000603FA /* RNRuntimeViewManager.h */,
+				72251E101E3941C9000603FA /* RNRuntimeViewManager.m */,
+				72251E561E3965EB000603FA /* RuntimeView.h */,
+				72251E571E3965EB000603FA /* RuntimeView.m */,
+			);
+			name = RNRPGSnack;
+			path = RNRPGSnackRuntime;
+			sourceTree = "<group>";
+		};
+		72251E591E3967A5000603FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72251E5A1E3967A5000603FA /* Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72251DA21E393C0F000603FA /* RNRPGSnack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72251DAC1E393C0F000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */;
+			buildPhases = (
+				72251D9F1E393C0F000603FA /* Sources */,
+				72251DA01E393C0F000603FA /* Frameworks */,
+				72251DA11E393C0F000603FA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNRPGSnack;
+			productName = RNRPGSnackRuntime;
+			productReference = 72251DA31E393C0F000603FA /* libRNRPGSnack.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72251D9B1E393C0F000603FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Daigo Sato";
+				TargetAttributes = {
+					72251DA21E393C0F000603FA = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 99336RT23J;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 72251D9E1E393C0F000603FA /* Build configuration list for PBXProject "RNRPGSnack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 72251D9A1E393C0F000603FA;
+			productRefGroup = 72251DA41E393C0F000603FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72251DA21E393C0F000603FA /* RNRPGSnack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72251D9F1E393C0F000603FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72251E111E3941C9000603FA /* RNRuntimeViewManager.m in Sources */,
+				72251E581E3965EB000603FA /* RuntimeView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		72251DAA1E393C0F000603FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React",
+					"$(SRCROOT)/../../react-native/React",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		72251DAB1E393C0F000603FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React",
+					"$(SRCROOT)/../../react-native/React",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72251DAD1E393C0F000603FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 99336RT23J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		72251DAE1E393C0F000603FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 99336RT23J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72251D9E1E393C0F000603FA /* Build configuration list for PBXProject "RNRPGSnack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72251DAA1E393C0F000603FA /* Debug */,
+				72251DAB1E393C0F000603FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72251DAC1E393C0F000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72251DAD1E393C0F000603FA /* Debug */,
+				72251DAE1E393C0F000603FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72251D9B1E393C0F000603FA /* Project object */;
+}
