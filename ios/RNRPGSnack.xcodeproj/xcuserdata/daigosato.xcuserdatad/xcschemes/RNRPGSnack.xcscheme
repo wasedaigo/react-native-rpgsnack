@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "72251DA21E393C0F000603FA"
-               BuildableName = "libRNRPGSnackRuntime.a"
-               BlueprintName = "RNRPGSnackRuntime"
-               ReferencedContainer = "container:RNRPGSnackRuntime.xcodeproj">
+               BlueprintIdentifier = "72251F131E397199000603FA"
+               BuildableName = "libRNRPGSnack.a"
+               BlueprintName = "RNRPGSnack"
+               ReferencedContainer = "container:RNRPGSnack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72251DA21E393C0F000603FA"
-            BuildableName = "libRNRPGSnackRuntime.a"
-            BlueprintName = "RNRPGSnackRuntime"
-            ReferencedContainer = "container:RNRPGSnackRuntime.xcodeproj">
+            BlueprintIdentifier = "72251F131E397199000603FA"
+            BuildableName = "libRNRPGSnack.a"
+            BlueprintName = "RNRPGSnack"
+            ReferencedContainer = "container:RNRPGSnack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72251DA21E393C0F000603FA"
-            BuildableName = "libRNRPGSnackRuntime.a"
-            BlueprintName = "RNRPGSnackRuntime"
-            ReferencedContainer = "container:RNRPGSnackRuntime.xcodeproj">
+            BlueprintIdentifier = "72251F131E397199000603FA"
+            BuildableName = "libRNRPGSnack.a"
+            BlueprintName = "RNRPGSnack"
+            ReferencedContainer = "container:RNRPGSnack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

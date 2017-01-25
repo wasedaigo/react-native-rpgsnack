@@ -6,14 +6,8 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		72251E111E3941C9000603FA /* RNRuntimeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E101E3941C9000603FA /* RNRuntimeViewManager.m */; };
-		72251E581E3965EB000603FA /* RuntimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E571E3965EB000603FA /* RuntimeView.m */; };
-		72251E5B1E3967A5000603FA /* Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72251E5A1E3967A5000603FA /* Mobile.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		72251DA11E393C0F000603FA /* CopyFiles */ = {
+		72251F121E397199000603FA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -25,20 +19,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		72251DA31E393C0F000603FA /* libRNRPGSnack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNRPGSnack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		72251E0F1E3941C9000603FA /* RNRuntimeViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNRuntimeViewManager.h; sourceTree = SOURCE_ROOT; };
 		72251E101E3941C9000603FA /* RNRuntimeViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRuntimeViewManager.m; sourceTree = SOURCE_ROOT; };
 		72251E561E3965EB000603FA /* RuntimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeView.h; sourceTree = SOURCE_ROOT; };
 		72251E571E3965EB000603FA /* RuntimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeView.m; sourceTree = SOURCE_ROOT; };
 		72251E5A1E3967A5000603FA /* Mobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mobile.framework; sourceTree = "<group>"; };
+		72251F141E397199000603FA /* libRNRPGSnack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNRPGSnack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		72251DA01E393C0F000603FA /* Frameworks */ = {
+		72251F111E397199000603FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72251E5B1E3967A5000603FA /* Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +50,7 @@
 		72251DA41E393C0F000603FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72251DA31E393C0F000603FA /* libRNRPGSnack.a */,
+				72251F141E397199000603FA /* libRNRPGSnack.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,21 +78,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72251DA21E393C0F000603FA /* RNRPGSnack */ = {
+		72251F131E397199000603FA /* RNRPGSnack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72251DAC1E393C0F000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */;
+			buildConfigurationList = 72251F1A1E397199000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */;
 			buildPhases = (
-				72251D9F1E393C0F000603FA /* Sources */,
-				72251DA01E393C0F000603FA /* Frameworks */,
-				72251DA11E393C0F000603FA /* CopyFiles */,
+				72251F101E397199000603FA /* Sources */,
+				72251F111E397199000603FA /* Frameworks */,
+				72251F121E397199000603FA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RNRPGSnack;
-			productName = RNRPGSnackRuntime;
-			productReference = 72251DA31E393C0F000603FA /* libRNRPGSnack.a */;
+			productName = RNRPGSnack;
+			productReference = 72251F141E397199000603FA /* libRNRPGSnack.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +104,7 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Daigo Sato";
 				TargetAttributes = {
-					72251DA21E393C0F000603FA = {
+					72251F131E397199000603FA = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 99336RT23J;
 						ProvisioningStyle = Automatic;
@@ -130,18 +123,16 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72251DA21E393C0F000603FA /* RNRPGSnack */,
+				72251F131E397199000603FA /* RNRPGSnack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72251D9F1E393C0F000603FA /* Sources */ = {
+		72251F101E397199000603FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72251E111E3941C9000603FA /* RNRuntimeViewManager.m in Sources */,
-				72251E581E3965EB000603FA /* RuntimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,28 +239,22 @@
 			};
 			name = Release;
 		};
-		72251DAD1E393C0F000603FA /* Debug */ = {
+		72251F1B1E397199000603FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 99336RT23J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		72251DAE1E393C0F000603FA /* Release */ = {
+		72251F1C1E397199000603FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 99336RT23J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -288,11 +273,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72251DAC1E393C0F000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */ = {
+		72251F1A1E397199000603FA /* Build configuration list for PBXNativeTarget "RNRPGSnack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72251DAD1E393C0F000603FA /* Debug */,
-				72251DAE1E393C0F000603FA /* Release */,
+				72251F1B1E397199000603FA /* Debug */,
+				72251F1C1E397199000603FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

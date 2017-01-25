@@ -7,12 +7,22 @@
 		<key>RNRPGSnack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>72251DA21E393C0F000603FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>72251F061E397164000603FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>72251F131E397199000603FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
