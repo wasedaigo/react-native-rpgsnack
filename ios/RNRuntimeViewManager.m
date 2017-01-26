@@ -11,7 +11,7 @@ RCT_EXPORT_MODULE();
 
 - (UIView *)view
 {
-    return [[RuntimeView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    return [[RuntimeView alloc] init];
 }
 
 - (dispatch_queue_t)methodQueue
@@ -19,6 +19,8 @@ RCT_EXPORT_MODULE();
     return dispatch_get_main_queue();
 }
 RCT_EXPORT_VIEW_PROPERTY(gamedata, NSString);
+RCT_EXPORT_VIEW_PROPERTY(width, int);
+RCT_EXPORT_VIEW_PROPERTY(height, int);
             
 @end
 

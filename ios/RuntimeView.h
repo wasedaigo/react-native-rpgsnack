@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLkit.h>
 
-@interface RuntimeView : UIView <GLKViewDelegate>
+@interface RuntimeView : UIView
+@property (nonatomic, assign) int width;
+@property (nonatomic, assign) int height;
 @property (nonatomic, copy) NSString *gamedata;
 @end
