@@ -7,7 +7,7 @@
 //
 
 #import "RuntimeView.h"
-#import "Mobile/Mobile.h"
+#import "RPGSnackRuntime/Mobile.h"
 
 @implementation RuntimeView
 
