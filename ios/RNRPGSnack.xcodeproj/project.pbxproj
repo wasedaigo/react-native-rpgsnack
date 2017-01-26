@@ -6,6 +6,13 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		727409F01E39741B00046FB3 /* RNRuntimeViewManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 72251E0F1E3941C9000603FA /* RNRuntimeViewManager.h */; };
+		727409F11E39741C00046FB3 /* RNRuntimeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E101E3941C9000603FA /* RNRuntimeViewManager.m */; };
+		727409F21E39741E00046FB3 /* RuntimeView.h in Sources */ = {isa = PBXBuildFile; fileRef = 72251E561E3965EB000603FA /* RuntimeView.h */; };
+		727409F31E39742000046FB3 /* RuntimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72251E571E3965EB000603FA /* RuntimeView.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		72251F121E397199000603FA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -133,6 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727409F01E39741B00046FB3 /* RNRuntimeViewManager.h in Sources */,
+				727409F11E39741C00046FB3 /* RNRuntimeViewManager.m in Sources */,
+				727409F21E39741E00046FB3 /* RuntimeView.h in Sources */,
+				727409F31E39742000046FB3 /* RuntimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
