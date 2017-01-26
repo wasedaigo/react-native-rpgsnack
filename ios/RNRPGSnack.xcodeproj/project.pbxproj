@@ -30,6 +30,7 @@
 		72251E101E3941C9000603FA /* RNRuntimeViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRuntimeViewManager.m; sourceTree = SOURCE_ROOT; };
 		72251E561E3965EB000603FA /* RuntimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeView.h; sourceTree = SOURCE_ROOT; };
 		72251E571E3965EB000603FA /* RuntimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeView.m; sourceTree = SOURCE_ROOT; };
+		72251E5A1E3967A5000603FA /* Mobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mobile.framework; sourceTree = "<group>"; };
 		72251F141E397199000603FA /* libRNRPGSnack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNRPGSnack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +50,7 @@
 			children = (
 				72251DA51E393C0F000603FA /* RNRPGSnack */,
 				72251DA41E393C0F000603FA /* Products */,
+				72251E591E3967A5000603FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +72,14 @@
 			);
 			name = RNRPGSnack;
 			path = RNRPGSnackRuntime;
+			sourceTree = "<group>";
+		};
+		72251E591E3967A5000603FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72251E5A1E3967A5000603FA /* Mobile.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
