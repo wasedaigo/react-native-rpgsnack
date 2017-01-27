@@ -2,6 +2,8 @@ package net.rpgsnack.rnrpgsnack;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -24,7 +26,9 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
                 return;
             }
             try {
-                Mobile.update();
+                if (Mobile.isRunning()) {
+                    Mobile.update();
+                }
             } catch (Exception e) {
                 Log.e("Go Error", e.toString());
                 mErrored = true;
@@ -84,7 +88,12 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     public void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, left + mWidth, top + mHeight);
 
-        runGame();
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                runGame();
+            }
+        });
     }
 
     private void runGame() {
