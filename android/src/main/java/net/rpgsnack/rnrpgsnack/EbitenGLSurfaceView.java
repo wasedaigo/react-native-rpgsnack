@@ -6,6 +6,7 @@ import android.util.Log;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -40,6 +41,16 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     }
 
     private double mDeviceScale = 0.0;
+    private int mWidth;
+    private int mHeight;
+
+    public void SetWidth(int width) {
+        mWidth = width;
+    }
+
+    public void SetHeight(int height) {
+        mHeight = height;
+    }
 
     public EbitenGLSurfaceView(Context context) {
         super(context);
@@ -52,7 +63,7 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     }
 
     public void setData(byte[] gamedata) {
-//        Mobile.setData(gamedata);
+        Mobile.setData(gamedata);
     }
 
     private void initialize() {
@@ -61,45 +72,38 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
         setRenderer(new EbitenRenderer());
     }
 
+    public double getScaleInPx() {
+        View parent = (View)getParent();
+        return Math.min(
+            mWidth / (double)Mobile.screenWidth(),
+            mHeight / (double)Mobile.screenHeight()
+        );
+    }
+
+    @Override
+    public void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, left + mWidth, top + mHeight);
+
+        runGame();
+    }
+
+    private void runGame() {
+        try {
+            if (!Mobile.isRunning()) {
+                Mobile.start(getScaleInPx());
+            }
+        } catch (Exception e) {
+            Log.e("Go Error", e.toString());
+        }
+    }
+
+    // pxToDp converts an value in pixels to dp.
+    // Note that Ebiten's mobile.Start accepts size value in dp.
     private double pxToDp(double x) {
         if (mDeviceScale == 0.0) {
             mDeviceScale = getResources().getDisplayMetrics().density;
         }
         return x / mDeviceScale;
-    }
-
-    public double getScaleInPx() {
-        View parent = (View)getParent();
-        return Math.max(1,
-                Math.min(parent.getWidth() / (double)Mobile.screenWidth(),
-                        parent.getHeight() / (double)Mobile.screenHeight()));
-    }
-
-    @Override
-    public void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        int oldWidth = getLayoutParams().width;
-        int oldHeight = getLayoutParams().height;
-        double scaleInPx = getScaleInPx();
-        int newWidth = (int)(Mobile.screenWidth() * scaleInPx);
-        int newHeight = (int)(Mobile.screenHeight() * scaleInPx);
-        if (oldWidth != newWidth || oldHeight != newHeight) {
-            getLayoutParams().width = newWidth;
-            getLayoutParams().height = newHeight;
-            post(new Runnable() {
-                @Override
-                public void run() {
-                    requestLayout();
-                }
-            });
-        }
-        try {
-            if (!Mobile.isRunning()) {
-                Mobile.start(pxToDp(getScaleInPx()));
-            }
-        } catch (Exception e) {
-            Log.e("Go Error", e.toString());
-        }
     }
 
     @Override
