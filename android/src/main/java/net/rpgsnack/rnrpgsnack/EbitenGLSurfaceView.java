@@ -8,7 +8,6 @@ import android.util.Log;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -47,6 +46,15 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     private double mDeviceScale = 0.0;
     private int mWidth;
     private int mHeight;
+    private Callback mOnLoaded;
+
+    public interface Callback {
+        void invoke();
+    }
+
+    public void setOnLoaded(final Callback callback) {
+        mOnLoaded = callback;
+    }
 
     public void SetWidth(int width) {
         mWidth = width;
@@ -87,22 +95,26 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     @Override
     public void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, left + mWidth, top + mHeight);
-
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                runGame();
-            }
-        });
+        runGame();
     }
 
     private void runGame() {
-        try {
-            if (!Mobile.isRunning()) {
-                Mobile.start(getScaleInPx());
-            }
-        } catch (Exception e) {
-            Log.e("Go Error", e.toString());
+        if (!Mobile.isRunning()) {
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                    try {
+                        if (!Mobile.isRunning()) {
+                            Mobile.start(getScaleInPx());
+                            if (mOnLoaded != null) {
+                                mOnLoaded.invoke();
+                            }
+                        }
+                    } catch (Exception e) {
+                        Log.e("Go Error", e.toString());
+                    }
+                }
+            });
         }
     }
 
