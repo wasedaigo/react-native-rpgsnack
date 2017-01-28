@@ -21,6 +21,8 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_VIEW_PROPERTY(gamedata, NSString);
 RCT_EXPORT_VIEW_PROPERTY(width, int);
 RCT_EXPORT_VIEW_PROPERTY(height, int);
+
+RCT_EXPORT_VIEW_PROPERTY(onRuntimeInit, RCTBubblingEventBlock)
             
 @end
 

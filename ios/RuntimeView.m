@@ -49,6 +49,10 @@ GLKView* _glkView;
         if (err != nil) {
             NSLog(@"Error: %@", err);
         }
+        
+        if (self.onRuntimeInit) {
+            self.onRuntimeInit(@{});
+        }
     }
 }
 
