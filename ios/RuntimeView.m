@@ -15,6 +15,7 @@ GLKView* _glkView;
 - (id)init {
     if ( self = [super init] ) {
         _glkView = [[GLKView alloc] init];
+        _glkView.delegate = self;
         self.width = 320;
         self.height = 480;
     }
@@ -56,12 +57,15 @@ GLKView* _glkView;
 }
 
 - (void)drawFrame{
+    [_glkView setNeedsDisplay];
+}
+
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     NSError* err = nil;
     MobileUpdate(&err);
     if (err != nil) {
         NSLog(@"Error: %@", err);
     }
-    [_glkView setNeedsDisplay];
 }
 
 - (void)updateTouches:(NSSet*)touches {

@@ -13,7 +13,7 @@
 
 @class RCTEventDispatcher;
 
-@interface RuntimeView : UIView
+@interface RuntimeView : UIView<GLKViewDelegate>
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
 @property (nonatomic, copy) NSString *gamedata;
