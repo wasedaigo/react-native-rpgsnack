@@ -8,7 +8,6 @@
 
 #import "RuntimeView.h"
 #import <Mobile/Mobile.h>
-#import <React/RCTConvert.h>
 
 @implementation RuntimeView
 GLKView* _glkView;
@@ -37,7 +36,7 @@ GLKView* _glkView;
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     if (!MobileIsRunning()) {
-        MobileSetData([RCTConvert NSData:self.gamedata] );
+        MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
         NSError* err = nil;
         CGRect rect = self.frame;
         int width = MobileScreenWidth();
