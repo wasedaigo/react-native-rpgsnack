@@ -24,19 +24,19 @@ GLKView* _glkView;
 
 -(void)layoutSubviews
 {
-    [super layoutSubviews ];
+    [super layoutSubviews];
     self.frame = CGRectMake(0, 0, self.width, self.height);
     
-    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    _glkView.context = context;
-    [self addSubview: _glkView];
-    [_glkView setFrame: self.frame];
-    [EAGLContext setCurrentContext:context];
-    
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    
     if (!MobileIsRunning()) {
+        EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        _glkView.context = context;
+        [self addSubview: _glkView];
+        [_glkView setFrame: self.frame];
+        [EAGLContext setCurrentContext:context];
+        
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
         MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
         NSError* err = nil;
         CGRect rect = self.frame;
