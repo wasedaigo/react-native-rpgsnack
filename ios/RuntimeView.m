@@ -11,11 +11,13 @@
 
 @implementation RuntimeView
 GLKView* _glkView;
+bool isRuntimeInitialized;
 
 - (id)init {
     if ( self = [super init] ) {
         self.width = 320;
         self.height = 480;
+        isRuntimeInitialized = false;
 
         _glkView = [[GLKView alloc] init];
         _glkView.delegate = self;
@@ -26,9 +28,36 @@ GLKView* _glkView;
 
         CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        
     }
     return self;
+}
+
+-(void)initRuntime {
+    if (!isRuntimeInitialized) {
+        if (MobileIsRunning()) {
+            if (self.onRuntimeInit) {
+                self.onRuntimeInit(@{});
+            }
+        } else {
+            MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
+            NSError* err = nil;
+            CGRect rect = self.frame;
+            int width = MobileScreenWidth();
+            int height = MobileScreenHeight();
+            double scaleX = (double)rect.size.width / (double)MobileScreenWidth();
+            double scaleY = (double)rect.size.height / (double)MobileScreenHeight();
+            double scale = MIN(scaleX, scaleY);
+            MobileStart(scale, &err);
+            if (err != nil) {
+                NSLog(@"Error: %@", err);
+            }
+            
+            if (self.onRuntimeInit) {
+                self.onRuntimeInit(@{});
+            }
+        }
+        isRuntimeInitialized = true;
+    }
 }
 
 -(void)layoutSubviews
@@ -37,25 +66,7 @@ GLKView* _glkView;
     self.frame = CGRectMake(0, 0, self.width, self.height);
     [_glkView setFrame: self.frame];
 
-    if (!MobileIsRunning()) {
-
-        MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
-        NSError* err = nil;
-        CGRect rect = self.frame;
-        int width = MobileScreenWidth();
-        int height = MobileScreenHeight();
-        double scaleX = (double)rect.size.width / (double)MobileScreenWidth();
-        double scaleY = (double)rect.size.height / (double)MobileScreenHeight();
-        double scale = MIN(scaleX, scaleY);
-        MobileStart(scale, &err);
-        if (err != nil) {
-            NSLog(@"Error: %@", err);
-        }
-        
-        if (self.onRuntimeInit) {
-            self.onRuntimeInit(@{});
-        }
-    }
+    [self initRuntime];
 }
 
 - (void)drawFrame{
