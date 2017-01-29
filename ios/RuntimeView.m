@@ -14,10 +14,19 @@ GLKView* _glkView;
 
 - (id)init {
     if ( self = [super init] ) {
-        _glkView = [[GLKView alloc] init];
-        _glkView.delegate = self;
         self.width = 320;
         self.height = 480;
+
+        _glkView = [[GLKView alloc] init];
+        _glkView.delegate = self;
+        EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        _glkView.context = context;
+        [self addSubview: _glkView];
+        [EAGLContext setCurrentContext:context];
+
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        
     }
     return self;
 }
@@ -26,16 +35,9 @@ GLKView* _glkView;
 {
     [super layoutSubviews];
     self.frame = CGRectMake(0, 0, self.width, self.height);
-    
+    [_glkView setFrame: self.frame];
+
     if (!MobileIsRunning()) {
-        EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        _glkView.context = context;
-        [self addSubview: _glkView];
-        [_glkView setFrame: self.frame];
-        [EAGLContext setCurrentContext:context];
-        
-        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
-        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 
         MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
         NSError* err = nil;
