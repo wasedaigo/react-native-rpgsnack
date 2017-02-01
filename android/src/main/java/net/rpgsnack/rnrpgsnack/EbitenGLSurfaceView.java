@@ -1,4 +1,4 @@
-package net.rpgsnack.rnrpgsnack;
+package com.rpgsnack.rnrpgsnack;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
@@ -11,7 +11,7 @@ import android.view.View;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import net.rpgsnack.runtime.mobile.Mobile;
+import com.rpgsnack.runtime.mobile.Mobile;
 
 public class EbitenGLSurfaceView extends GLSurfaceView {
 

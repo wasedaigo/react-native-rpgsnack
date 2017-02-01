@@ -1,4 +1,4 @@
-package net.rpgsnack.rnrpgsnack;
+package com.rpgsnack.rnrpgsnack;
 
 import android.opengl.GLSurfaceView;
 import android.provider.CalendarContract;

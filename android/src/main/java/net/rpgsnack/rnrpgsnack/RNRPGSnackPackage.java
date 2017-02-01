@@ -1,4 +1,4 @@
-package net.rpgsnack.rnrpgsnack;
+package com.rpgsnack.rnrpgsnack;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
