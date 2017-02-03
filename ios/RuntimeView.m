@@ -79,6 +79,13 @@ bool isRuntimeInitialized;
     if (err != nil) {
         NSLog(@"Error: %@", err);
     }
+
+    // TODO: Call following callback as necessary
+    // self.onInterstitialAdsShown(@{});
+    // self.onRewardedAdsShown(@{});
+    // self.onProgressSaved(NSString* progress);
+    // self.onAchievementUnlocked(NSString* achievements);
+    // self.onPurchaseStarted(NSString* productId);
 }
 
 - (void)updateTouches:(NSSet*)touches {
@@ -105,6 +112,27 @@ bool isRuntimeInitialized;
 
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
     [self updateTouches:touches];
+}
+
+- (void)finishPurchase:(NSString*) purchases {
+    NSLog(@"TODO call runtime method finishPurchase %@", purchases);
+}
+
+- (void)finishInterstitialAds {
+    // TODO call runtime method
+    NSLog(@"TODO call runtime method finishInterstitialAds");
+}
+
+- (void)finishRewardedAds:(BOOL) rewarded {
+    NSLog(@"TODO call runtime method finishRewardedAds %@", rewarded ? @"YES" : @"NO");
+}
+
+- (void)finishAchievementUnlock:(NSString*) achievements {
+    NSLog(@"TODO call runtime method finishAchivementUnlock %@", achievements);
+}
+
+- (void)finishProgressSave {
+    NSLog(@"TODO call runtime method finishProgressSave");
 }
 
 @end

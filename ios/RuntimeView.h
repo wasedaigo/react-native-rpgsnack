@@ -14,9 +14,24 @@
 @class RCTEventDispatcher;
 
 @interface RuntimeView : UIView<GLKViewDelegate>
+
+- (void)finishPurchase:(NSString*) purchases;
+- (void)finishInterstitialAds;
+- (void)finishRewardedAds:(BOOL) rewarded;
+- (void)finishAchievementUnlock:(NSString*) achievements;
+- (void)finishProgressSave;
+
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
 @property (nonatomic, copy) NSString *gamedata;
+@property (nonatomic, copy) NSString *progress;
+@property (nonatomic, copy) NSString *purchases;
+@property (nonatomic, copy) NSString *achievements;
 
 @property (nonatomic, copy) RCTBubblingEventBlock onRuntimeInit;
+@property (nonatomic, copy) RCTBubblingEventBlock onInterstitialAdsShown;
+@property (nonatomic, copy) RCTBubblingEventBlock onRewardedAdsShown;
+@property (nonatomic, copy) RCTBubblingEventBlock onAchievementUnlocked;
+@property (nonatomic, copy) RCTBubblingEventBlock onProgressSaved;
+@property (nonatomic, copy) RCTBubblingEventBlock onPurchaseStarted;
 @end
