@@ -23,6 +23,9 @@
 
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
+@property (nonatomic, assign) BOOL interstitialAdsLoaded;
+@property (nonatomic, assign) BOOL rewardedAdsLoaded;
+
 @property (nonatomic, copy) NSString *gamedata;
 @property (nonatomic, copy) NSString *progress;
 @property (nonatomic, copy) NSString *purchases;

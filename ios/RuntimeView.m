@@ -84,8 +84,13 @@ bool isRuntimeInitialized;
     // self.onInterstitialAdsShown(@{});
     // self.onRewardedAdsShown(@{});
     // self.onProgressSaved(NSString* progress);
-    // self.onAchievementUnlocked(NSString* achievements);
+    // self.onAchievementUnlocked(NSString* achievementId);
     // self.onPurchaseStarted(NSString* productId);
+    
+    // TODO: Set RewardedAdsLoaded state
+    // TODO: Set InterstitialAdsLoaded state
+    // self.interstitialAdsLoaded
+    // self.rewardedAdsLoaded
 }
 
 - (void)updateTouches:(NSSet*)touches {

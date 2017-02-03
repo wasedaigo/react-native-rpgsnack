@@ -4,12 +4,7 @@ import {
   findNodeHandle
 } from 'react-native';
 
-const RNRuntimeViewManager = NativeModules.RNRuntimeViewManager;
-const finishPurchase = RNRuntimeViewManager.finishPurchase;
-const finishAchievementUnlock = RNRuntimeViewManager.finishAchievementUnlock;
-const finishProgressSave = RNRuntimeViewManager.finishProgressSave;
-const finishInterstitialAds = RNRuntimeViewManager.finishInterstitialAds;
-const finishRewardedAds = RNRuntimeViewManager.finishRewardedAds;
+import {finishPurchase, finishAchievementUnlock, finishProgressSave, finishInterstitialAds, finishRewardedAds} from "./RNRuntimeView.methods";
 
 const RNRuntimeView = requireNativeComponent('RNRuntimeView', null);
 
@@ -17,7 +12,7 @@ class RuntimeView extends RNRuntimeView {
   finishPurchase(purchases) {
       return new Promise((resolve, reject) => {
           finishPurchase(
-              findNodeHandle(this), JSON.stringify(purchases)
+              findNodeHandle(this), purchases
           );
       });
   }
@@ -25,7 +20,7 @@ class RuntimeView extends RNRuntimeView {
   finishAchievementUnlock(achievements) {
       return new Promise((resolve, reject) => {
           finishAchievementUnlock(
-              findNodeHandle(this), JSON.stringify(achievements)
+              findNodeHandle(this), achievements
           );
       });
   }

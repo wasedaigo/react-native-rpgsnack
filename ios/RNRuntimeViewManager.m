@@ -91,6 +91,8 @@ RCT_EXPORT_VIEW_PROPERTY(purchases, NSString);
 RCT_EXPORT_VIEW_PROPERTY(achievements, NSString);
 RCT_EXPORT_VIEW_PROPERTY(width, int);
 RCT_EXPORT_VIEW_PROPERTY(height, int);
+RCT_EXPORT_VIEW_PROPERTY(interstitialAdsLoaded, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(rewardedAdsLoaded, BOOL);
 
 RCT_EXPORT_VIEW_PROPERTY(onRuntimeInit, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(onInterstitialAdsShown, RCTBubblingEventBlock)

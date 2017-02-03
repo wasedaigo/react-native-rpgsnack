@@ -47,13 +47,31 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
     private int mWidth;
     private int mHeight;
     private Callback mOnLoaded;
+    private Callback mOnPurchaseStarted;
+    private Callback mOnAchievementUnlocked;
+    private Callback mOnProgressSaved;
+    private Callback mOnInterstitialAdsShown;
+    private Callback mOnRewardedAdsShown;
 
     public interface Callback {
-        void invoke();
+        void invoke(String data);
     }
 
     public void setOnLoaded(final Callback callback) {
         mOnLoaded = callback;
+    }
+
+    // TODO call following callbacks
+    public void setOnPurchaseStarted(final Callback callback) {
+        mOnPurchaseStarted = callback;
+    }
+    public void setOnAchievementUnlocked(final Callback callback) { mOnAchievementUnlocked = callback; }
+    public void setOnProgressSaved(final Callback callback) {
+        mOnProgressSaved = callback;
+    }
+    public void setOnInterstitialAdsShown(final Callback callback) { mOnInterstitialAdsShown = callback; }
+    public void setOnRewardedAdsShown(final Callback callback) {
+        mOnRewardedAdsShown = callback;
     }
 
     public void SetWidth(int width) {
@@ -107,7 +125,7 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
                         if (!Mobile.isRunning()) {
                             Mobile.start(getScaleInPx());
                             if (mOnLoaded != null) {
-                                mOnLoaded.invoke();
+                                mOnLoaded.invoke("");
                             }
                         }
                     } catch (Exception e) {
@@ -136,5 +154,25 @@ public class EbitenGLSurfaceView extends GLSurfaceView {
             Mobile.updateTouchesOnAndroid(e.getActionMasked(), id, (int)pxToDp(x), (int)pxToDp(y));
         }
         return true;
+    }
+
+    public void finalizePurchase(String purchases) {
+        Log.i("TODO", "Implement finalizePurchase");
+    }
+
+    public void finishAchievementUnlock(String achievements) {
+        Log.i("TODO", "Implement finishAchievementUnlock");
+    }
+
+    public void finishProgressSave() {
+        Log.i("TODO", "Implement finishProgressSave");
+    }
+
+    public void finishInterstitialAds() {
+        Log.i("TODO", "Implement finishInterstitialAds");
+    }
+
+    public void finishRewardedAds(boolean rewarded) {
+        Log.i("TODO", "Implement finishRewardedAds");
     }
 }
