@@ -69,12 +69,12 @@ id<MobileRequester> _requester;
             MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
             NSError* err = nil;
             CGRect rect = self.frame;
-            int width = MobileScreenWidth();
-            int height = MobileScreenHeight();
-            double scaleX = (double)rect.size.width / (double)MobileScreenWidth();
-            double scaleY = (double)rect.size.height / (double)MobileScreenHeight();
+            int width = 480;
+            int height = 720;
+            double scaleX = (double)rect.size.width / (double)width;
+            double scaleY = (double)rect.size.height / (double)height;
             double scale = MIN(scaleX, scaleY);
-            MobileStart(scale, &err);
+            MobileStart(width, height, scale, _requester, &err);
             if (err != nil) {
                 NSLog(@"Error: %@", err);
             }
