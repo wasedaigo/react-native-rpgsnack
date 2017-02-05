@@ -9,9 +9,38 @@
 #import "RuntimeView.h"
 #import <Mobile/Mobile.h>
 
+@interface RequeterImpl : NSObject<MobileRequester> {
+}
+- (void)requestInterstitialAds:(long)requestID;
+- (void)requestPurchase:(long)requestID productID:(NSString*)productID;
+- (void)requestRewardedAds:(long)requestID;
+- (void)requestSaveProgress:(long)requestID progressData:(NSString*)progressData;
+- (void)requestUnlockAhievement:(long)requestID achievementID:(NSString*)achievementID;
+@end
+
+@implementation RequsterImpl : NSObject {
+}
+- (void)requestInterstitialAds:(long)requestID
+{
+}
+- (void)requestPurchase:(long)requestID productID:(NSString*)productID
+{
+}
+- (void)requestRewardedAds:(long)requestID
+{
+}
+- (void)requestSaveProgress:(long)requestID progressData:(NSString*)progressData
+{
+}
+- (void)requestUnlockAhievement:(long)requestID achievementID:(NSString*)achievementID
+{
+}
+@end
+
 @implementation RuntimeView
 GLKView* _glkView;
 bool isRuntimeInitialized;
+id<MobileRequester> _requester;
 
 - (id)init {
     if ( self = [super init] ) {
@@ -28,17 +57,15 @@ bool isRuntimeInitialized;
 
         CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawFrame)];
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
+        _requester = [[RequsterImpl alloc] init];
     }
     return self;
 }
 
 -(void)initRuntime {
     if (!isRuntimeInitialized) {
-        if (MobileIsRunning()) {
-            if (self.onRuntimeInit) {
-                self.onRuntimeInit(@{});
-            }
-        } else {
+        if (!MobileIsRunning()) {
             MobileSetData([self.gamedata dataUsingEncoding:NSUTF8StringEncoding]);
             NSError* err = nil;
             CGRect rect = self.frame;
@@ -51,10 +78,9 @@ bool isRuntimeInitialized;
             if (err != nil) {
                 NSLog(@"Error: %@", err);
             }
-            
-            if (self.onRuntimeInit) {
-                self.onRuntimeInit(@{});
-            }
+        }
+        if (self.onRuntimeInit) {
+            self.onRuntimeInit(@{});
         }
         isRuntimeInitialized = true;
     }
